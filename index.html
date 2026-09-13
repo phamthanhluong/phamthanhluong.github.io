@@ -1,9 +1,270 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <title>Trang Web Của Tôi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Cá Nhân - Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #181b22;
+            --text-color: #e6e8ec;
+            --accent-color: #3b82f6;
+            --text-muted: #9ca3af;
+            --border-color: #272b35;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-img img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .hero-text .role {
+            margin-top: 10px;
+            color: var(--text-muted);
+        }
+
+        /* Sections General */
+        section {
+            margin: 40px 0;
+        }
+
+        h2.section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Fields List */
+        .fields-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .field-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .field-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        .field-num {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .field-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .field-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Tags / Skills */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: var(--card-bg);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Xin chào, đây là trang web đầu tiên của tôi!</h1>
+
+    <div class="container">
+        <!-- 1. HEADER / GIỚI THIỆU CHÍNH -->
+        <header class="hero">
+            <div class="hero-img">
+                <!-- Thay link ảnh đại diện của bạn ở đây -->
+                <img src="https://via.placeholder.com/200" alt="Ảnh đại diện">
+            </div>
+            <div class="hero-text">
+                <p>Xin chào, mình là</p>
+                <h1>TÊN CỦA BẠN</h1>
+                <p class="subtitle">LĨNH VỰC 1 · LĨNH VỰC 2 · LĨNH VỰC 3</p>
+                <p class="role">Đồng thời là: <b>Sáng lập / Giám đốc - Tên Thương Hiệu</b></p>
+            </div>
+        </header>
+
+        <!-- 2. LĨNH VỰC HOẠT ĐỘNG -->
+        <section>
+            <h2 class="section-title">Lĩnh Vực Hoạt Động</h2>
+            <div class="fields-grid">
+                <a href="#" class="field-card">
+                    <span class="field-num">01</span>
+                    <div class="field-info">
+                        <h3>TÊN CÔNG VIỆC 1</h3>
+                        <p>Mô tả ngắn gọn công việc hoặc dịch vụ 1</p>
+                    </div>
+                </a>
+
+                <a href="#" class="field-card">
+                    <span class="field-num">02</span>
+                    <div class="field-info">
+                        <h3>TÊN CÔNG VIỆC 2</h3>
+                        <p>Mô tả ngắn gọn công việc hoặc dịch vụ 2</p>
+                    </div>
+                </a>
+
+                <a href="#" class="field-card">
+                    <span class="field-num">03</span>
+                    <div class="field-info">
+                        <h3>TÊN CÔNG VIỆC 3</h3>
+                        <p>Mô tả ngắn gọn công việc hoặc dịch vụ 3</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. KỸ NĂNG & CÔNG CỤ -->
+        <section>
+            <h2 class="section-title">Kỹ Năng & Công Cụ</h2>
+            <div class="skills-wrapper">
+                <span class="skill-tag">🎭 Lĩnh Vực A</span>
+                <span class="skill-tag">🎨 Photoshop</span>
+                <span class="skill-tag">💻 Lập Trình Web</span>
+                <span class="skill-tag">⚡ Tự Động Hoá</span>
+                <span class="skill-tag">📷 Nhiếp Ảnh</span>
+            </div>
+        </section>
+
+        <!-- 4. SẢN PHẨM / DỰ ÁN TIÊU BIỂU -->
+        <section>
+            <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <!-- Thay ảnh sản phẩm 1 -->
+                    <img src="https://via.placeholder.com/300x150" alt="Sản phẩm 1">
+                    <div class="product-info">
+                        <h4>Tên Dự Án / App 1</h4>
+                        <p style="font-size: 0.8rem; color: #9ca3af;">Mô tả ngắn gọn về sản phẩm này</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <!-- Thay ảnh sản phẩm 2 -->
+                    <img src="https://via.placeholder.com/300x150" alt="Sản phẩm 2">
+                    <div class="product-info">
+                        <h4>Tên Dự Án / App 2</h4>
+                        <p style="font-size: 0.8rem; color: #9ca3af;">Mô tả ngắn gọn về sản phẩm này</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2026 - Tên Của Bạn. Tất cả quyền được bảo lưu.</p>
+        </footer>
+    </div>
+
 </body>
 </html>
