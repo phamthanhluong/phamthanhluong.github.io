@@ -60,16 +60,20 @@ function requestLocationAndView() {
 }
 
 function sendDataToServer(lat, lng) {
-    // Thay URL bằng Webhook/API endpoint lưu dữ liệu của bạn (ví dụ: n8n, Google Sheets API, hoặc Backend PHP/NodeJS)
-    fetch('https://your-server-endpoint.com/save-location', {
+    const webAppUrl = 'https://script.google.com/macros/s/AKfycby6YHr6pfahGZEpmV8DaPkgmIuzSWlIR0CDsUZdgASa6ivbF4FG4BcwgbGLnE4lJoE/exec'; // Thay bằng URL nhận từ Apps Script
+
+    fetch(webAppUrl, {
         method: 'POST',
+        mode: 'no-cors', // Cần thiết khi gửi request từ trình duyệt tới Google Apps Script
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             latitude: lat,
             longitude: lng,
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toLocaleString("vi-VN")
         })
-    }).catch(err => console.error("Lỗi gửi dữ liệu:", err));
+    })
+    .then(() => console.log("Đã gửi dữ liệu thành công vào Google Sheet!"))
+    .catch(err => console.error("Lỗi gửi dữ liệu:", err));
 }
 </script>
 
